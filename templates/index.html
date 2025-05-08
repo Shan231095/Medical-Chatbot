@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>❤️ Heart Disease Medical Chatbot</title>
+    <style>
+        body {
+            background-color: #f2f7f5;
+            font-family: Arial, sans-serif;
+            margin: 30px;
+        }
+        .chat-container {
+            background-color: #ffffff;
+            border-radius: 10px;
+            padding: 20px;
+            box-shadow: 0px 0px 10px #ccc;
+        }
+        .user-message {
+            background-color: #d1e8e2;
+            padding: 10px;
+            border-radius: 10px;
+            margin-bottom: 10px;
+            text-align: right;
+        }
+        .bot-message {
+            background-color: #e0e0e0;
+            padding: 10px;
+            border-radius: 10px;
+            margin-bottom: 10px;
+            text-align: left;
+        }
+        input[type=text] {
+            width: 80%;
+            padding: 10px;
+            margin: 10px 0;
+        }
+        button {
+            padding: 10px 20px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+
+<h1>❤️ Heart Disease Medical Chatbot</h1>
+
+<div class="chat-container">
+    {% if user_message %}
+    <div class="user-message"><strong>You:</strong> {{ user_message }}</div>
+    {% endif %}
+    
+    {% if bot_reply %}
+    <div class="bot-message"><strong>Bot:</strong> {{ bot_reply }}</div>
+    {% endif %}
+    
+    <form method="post">
+        <input type="text" name="user_input" placeholder="Ask anything about heart disease..." required>
+        <button type="submit">Send</button>
+    </form>
+</div>
+
+</body>
+</html>
